@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
@@ -8,25 +7,22 @@ import InterUIRegularWoffFont from "../fonts/Inter-UI-Regular.woff";
 import InterUIRegularWoff2Font from "../fonts/Inter-UI-Regular.woff2";
 import InterUIMediumWoffFont from "../fonts/Inter-UI-Medium.woff";
 import InterUIMediumWoff2Font from "../fonts/Inter-UI-Medium.woff2";
-
-const Header = () => (
-  <div>
-    <h1>Header</h1>
-  </div>
-);
+import Header from "../components/Header";
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Ariel Gerstein - Front-end developer"
       meta={[
         { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
+        {
+          name: "keywords",
+          content: "portfolio, development, programming, front-end development",
+        },
       ]}
     />
     <Header />
     <div>{children()}</div>
-
     <style jsx global>
       {`
         @font-face {
