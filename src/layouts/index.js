@@ -8,6 +8,7 @@ import InterUIRegularWoff2Font from "../fonts/Inter-UI-Regular.woff2";
 import InterUIMediumWoffFont from "../fonts/Inter-UI-Medium.woff";
 import InterUIMediumWoff2Font from "../fonts/Inter-UI-Medium.woff2";
 import Header from "../components/Header";
+import styleVariables from "../variables/styles.json";
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -43,6 +44,11 @@ const TemplateWrapper = ({ children }) => (
 
         body {
           font-family: "Inter UI", Helvetica, Arial, sans-serif;
+          font-weight: ${styleVariables.fontWeights.regular};
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: ${styleVariables.fontWeights.medium};
         }
       `}
     </style>
