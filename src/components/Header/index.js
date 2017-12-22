@@ -49,14 +49,9 @@ const Header = () => (
 
     <style jsx>
       {`
-        .list-unstyled {
-          padding: 0;
-          margin: 0;
-          list-style-type: none;
-        }
-
         header {
           margin-top: 96px;
+          margin-bottom: ${stylesVariables.spacing.big};
         }
 
         .container {

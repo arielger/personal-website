@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import twemoji from "twemoji";
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import InterUIRegularWoffFont from "../fonts/Inter-UI-Regular.woff";
@@ -10,22 +11,41 @@ import InterUIMediumWoff2Font from "../fonts/Inter-UI-Medium.woff2";
 import Header from "../components/Header";
 import styleVariables from "../variables/styles.json";
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Ariel Gerstein - Front-end developer"
-      meta={[
-        { name: "description", content: "Sample" },
-        {
-          name: "keywords",
-          content: "portfolio, development, programming, front-end development",
-        },
-      ]}
-    />
-    <Header />
-    <div>{children()}</div>
-    <style jsx global>
-      {`
+class TemplateWrapper extends React.Component {
+  componentDidMount() {
+    twemoji.parse(this.wrapper, {
+      folder: "svg",
+      ext: ".svg",
+    });
+  }
+  render() {
+    const { children } = this.props;
+
+    return (
+      <div
+        ref={e => {
+          this.wrapper = e;
+        }}
+      >
+        <Helmet
+          title="Ariel Gerstein - Front-end developer"
+          meta={[
+            {
+              name: "description",
+              content:
+                "I am a front-end developer passionate about the web and new technologies. I enjoy learning about Javascript, ES6, React, Redux, Functional Programming and design.",
+            },
+            {
+              name: "keywords",
+              content:
+                "portfolio, development, programming, front-end development",
+            },
+          ]}
+        />
+        <Header />
+        <div>{children()}</div>
+        <style jsx global>
+          {`
         @font-face {
           font-family: "Inter UI";
           src: url("${InterUIRegularWoff2Font}") format("woff2"),
@@ -50,10 +70,23 @@ const TemplateWrapper = ({ children }) => (
         h1, h2, h3, h4, h5, h6 {
           font-weight: ${styleVariables.fontWeights.medium};
         }
+
+        // Set default size for emojis generated via twemoji
+        img.emoji {
+          width: 1.5em;
+        }
+
+        .list-unstyled {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+        }
       `}
-    </style>
-  </div>
-);
+        </style>
+      </div>
+    );
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
