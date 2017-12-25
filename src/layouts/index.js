@@ -9,6 +9,7 @@ import InterUIRegularWoff2Font from "../fonts/Inter-UI-Regular.woff2";
 import InterUIMediumWoffFont from "../fonts/Inter-UI-Medium.woff";
 import InterUIMediumWoff2Font from "../fonts/Inter-UI-Medium.woff2";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import styleVariables from "../variables/styles.json";
 
 class TemplateWrapper extends React.Component {
@@ -44,6 +45,7 @@ class TemplateWrapper extends React.Component {
         />
         <Header />
         <div>{children()}</div>
+        <Footer />
         <style jsx global>
           {`
         @font-face {

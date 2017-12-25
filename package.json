@@ -11,6 +11,8 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-react-next": "^1.0.6",
     "gatsby-plugin-styled-jsx": "^1.0.13",
+    "gatsby-source-filesystem": "^1.5.11",
+    "gatsby-transformer-remark": "^1.7.26",
     "twemoji": "^2.5.0"
   },
   "engines": {

@@ -22,7 +22,9 @@ const socialMediaLinks = [
 const Header = () => (
   <header>
     <div className="container">
-      <h1 className="title">Ariel Gerstein</h1>
+      <h1 className="title">
+        <Link to="/">Ariel Gerstein</Link>
+      </h1>
       <nav>
         <ul className="navigation-list list-unstyled">
           {links.map(link => (
@@ -62,6 +64,10 @@ const Header = () => (
 
         .title {
           display: inline-block;
+        }
+
+        .title :global(a) {
+          text-decoration: none;
         }
 
         nav {

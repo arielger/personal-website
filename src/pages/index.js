@@ -9,7 +9,6 @@ const IndexPage = () => (
     <Hero />
     <LatestArticles />
     <Contact />
-    <Footer />
   </div>
 );
 

@@ -23,9 +23,9 @@ const LatestArticles = () => (
             title="Web Typography: Designing Tables to be Read, Not Looked At"
             date="02/06/2018"
           />
-          <div className="all-articles">
+          <div className="all-articles-link">
             <Link to="/articles" exact>
-              See all articles ->
+              See all articles <span className="arrow">{"->"}</span>
             </Link>
           </div>
         </div>
@@ -49,11 +49,21 @@ const LatestArticles = () => (
           margin-bottom: 96px;
         }
 
-        .all-articles :global(a) {
+        .all-articles-link :global(a) {
           text-decoration: none;
           font-size: ${stylesVariables.fontSizes.generalText};
           color: ${stylesVariables.colors.lightGrey};
-          font-weight: ${stylesVariables.fontWeights.medium};
+        }
+
+        .all-articles-link .arrow {
+          display: inline-block;
+          position: relative;
+          transition: transform 0.2s;
+          width: 30px;
+        }
+
+        .all-articles-link:hover .arrow {
+          transform: translateX(15px);
         }
       `}
     </style>
