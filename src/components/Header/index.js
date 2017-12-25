@@ -80,6 +80,7 @@ const Header = () => (
         .navigation-list li :global(a) {
           color: ${stylesVariables.colors.mediumGrey};
           padding: 8px;
+          text-decoration: none;
         }
 
         .navigation-list li :global(a.active) {
@@ -92,6 +93,7 @@ const Header = () => (
 
         .social-media-list li :global(a) {
           padding: 4px;
+          text-decoration: none;
         }
       `}
     </style>

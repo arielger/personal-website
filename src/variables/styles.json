@@ -16,6 +16,9 @@
     "medium": "24px",
     "title": "32px"
   },
+  "lineHeights": {
+    "medium": "36px"
+  },
   "fontWeights": {
     "regular": "400",
     "medium": "500"
@@ -23,6 +26,7 @@
   "spacing": {
     "small": "16px",
     "medium": "32px",
-    "big": "64px"
+    "big": "64px",
+    "veryBig": "128px"
   }
 }

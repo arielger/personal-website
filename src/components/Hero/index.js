@@ -1,10 +1,11 @@
 import React from "react";
 import variableStyles from "../../variables/styles.json";
+import Separator from "../Separator";
 
 const Hero = () => (
-  <div>
+  <section className="hero">
     <div className="container">
-      <div className="row">
+      <div className="hero-row row">
         <div className="col-8">
           <p>
             I’m a front-end developer 👨‍💻 from Buenos Aires, Argentina 🇦🇷. I’m
@@ -20,16 +21,22 @@ const Hero = () => (
           </p>
         </div>
       </div>
+      <Separator />
     </div>
 
     <style jsx>
       {`
+        .hero-row {
+          padding-bottom: 96px;
+        }
+
         p {
           font-size: ${variableStyles.fontSizes.medium};
+          line-height: ${variableStyles.lineHeights.medium};
         }
       `}
     </style>
-  </div>
+  </section>
 );
 
 export default Hero;

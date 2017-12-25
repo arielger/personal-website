@@ -71,6 +71,15 @@ class TemplateWrapper extends React.Component {
           font-weight: ${styleVariables.fontWeights.medium};
         }
 
+        a {
+          color: ${styleVariables.colors.mediumGrey};
+          text-decoration: underline;
+        }
+
+        a:hover {
+          color: ${styleVariables.colors.black};
+        }
+
         // Set default size for emojis generated via twemoji
         img.emoji {
           width: 1.5em;
