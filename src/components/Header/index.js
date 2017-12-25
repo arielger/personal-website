@@ -36,11 +36,11 @@ const Header = () => (
         <ul className="social-media-list list-unstyled">
           {socialMediaLinks.map(socialMediaLink => (
             <li key={socialMediaLink.href}>
-              <Link to={socialMediaLink.href} activeClassName="active">
+              <a target="_blank" href={socialMediaLink.href}>
                 {React.createElement(socialMediaLink.icon, {
                   width: 22,
                 })}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
