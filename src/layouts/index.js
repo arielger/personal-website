@@ -72,7 +72,7 @@ class TemplateWrapper extends React.Component {
         }
 
         a {
-          color: ${styleVariables.colors.mediumGrey};
+          color: currentColor;
           text-decoration: underline;
         }
 
@@ -82,7 +82,7 @@ class TemplateWrapper extends React.Component {
 
         // Set default size for emojis generated via twemoji
         img.emoji {
-          width: 1.5em;
+          width: 1.25em;
         }
 
         .list-unstyled {
