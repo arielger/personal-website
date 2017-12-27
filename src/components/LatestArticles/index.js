@@ -10,17 +10,19 @@ const LatestArticles = ({ articles }) => (
   <section className="latest-articles">
     <div className="container">
       <div className="latest-articles-row row">
-        <div className="col-8">
+        <div className="col-12 col-lg-8">
           <h2 className="title">Latest articles 🗞</h2>
-          {articles.map(({ node }) => (
-            <ArticlePreview
-              key={node.frontmatter.title}
-              path={node.frontmatter.path}
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              excerpt={node.excerpt}
-            />
-          ))}
+          <div className="articles">
+            {articles.map(({ node }) => (
+              <ArticlePreview
+                key={node.frontmatter.title}
+                path={node.frontmatter.path}
+                title={node.frontmatter.title}
+                date={node.frontmatter.date}
+                excerpt={node.excerpt}
+              />
+            ))}
+          </div>
           <div className="all-articles-link">
             <Link to="/articles" exact>
               See all articles <span className="arrow">{"->"}</span>
@@ -34,17 +36,45 @@ const LatestArticles = ({ articles }) => (
     <style jsx>
       {`
         .latest-articles {
-          padding-top: ${stylesVariables.spacing.veryBig};
+          padding-top: ${stylesVariables.spacing.big};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .latest-articles {
+            padding-top: ${stylesVariables.spacing.veryBig};
+          }
         }
 
         .latest-articles-row {
-          padding-bottom: ${stylesVariables.spacing.veryBig};
+          padding-bottom: ${stylesVariables.spacing.big};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .latest-articles-row {
+            padding-bottom: ${stylesVariables.spacing.veryBig};
+          }
+        }
+
+        .articles {
+          margin-bottom: ${stylesVariables.spacing.medium};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .articles {
+            margin-bottom: ${stylesVariables.spacing.big};
+          }
         }
 
         .title {
           font-size: ${stylesVariables.fontSizes.title};
-          color: ${stylesVariables.colors.mediumGray};
-          margin-bottom: 96px;
+          color: ${stylesVariables.colors.mediumGrey};
+          margin-bottom: ${stylesVariables.spacing.big};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .title {
+            margin-bottom: 96px;
+          }
         }
 
         .all-articles-link :global(a) {
@@ -54,14 +84,15 @@ const LatestArticles = ({ articles }) => (
         }
 
         .all-articles-link .arrow {
+          margin-left: 5px;
           display: inline-block;
           position: relative;
-          transition: transform 0.2s;
+          transition: transform 0.3s;
           width: 30px;
         }
 
         .all-articles-link:hover .arrow {
-          transform: translateX(15px);
+          transform: translateX(5px);
         }
       `}
     </style>

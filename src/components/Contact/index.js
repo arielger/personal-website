@@ -21,24 +21,48 @@ const Contact = () => (
     <style jsx>
       {`
         .contact {
-          padding-top: ${stylesVariables.spacing.veryBig};
+          padding-top: ${stylesVariables.spacing.big};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .contact {
+            padding-top: ${stylesVariables.spacing.veryBig};
+          }
         }
 
         .contact-row {
-          padding-bottom: ${stylesVariables.spacing.veryBig};
+          padding-bottom: 96px;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .contact-row {
+            padding-bottom: ${stylesVariables.spacing.veryBig};
+          }
         }
 
         .title {
           font-size: ${stylesVariables.fontSizes.title};
-          color: ${stylesVariables.colors.mediumGray};
-          margin-bottom: 96px;
+          color: ${stylesVariables.colors.mediumGrey};
+          margin-bottom: ${stylesVariables.spacing.medium};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .title {
+            margin-bottom: 64px;
+          }
         }
 
         .email {
-          font-size: 43px;
+          font-size: 26px;
           font-weight: ${stylesVariables.fontWeights.medium};
           text-decoration: none;
           position: relative;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .email {
+            font-size: 43px;
+          }
         }
 
         .email:hover:after {
@@ -51,11 +75,17 @@ const Contact = () => (
           left: 0;
           right: 0;
           bottom: -10px;
-          height: 4px;
+          height: 2px;
           background-color: currentColor;
           transform-origin: 0 0;
           transform: scaleX(1);
           transition: transform 0.2s;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .email:after {
+            height: 4px;
+          }
         }
       `}
     </style>

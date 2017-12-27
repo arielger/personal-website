@@ -6,34 +6,55 @@ import stylesVariables from "../../variables/styles.json";
 
 const ArticlePreview = ({ path, title, excerpt, date }) => (
   <article>
-    <h2 className="title">
-      <Link to={path}>{title}</Link>
-    </h2>
-    <time className="date">{date}</time>
-    {excerpt && <p>{excerpt}</p>}
+    <Link to={path}>
+      <h2 className="title">{title}</h2>
+      <time className="date">{date}</time>
+      {excerpt && <p>{excerpt}</p>}
+    </Link>
 
     <style jsx>
       {`
         article {
-          margin-bottom: ${stylesVariables.spacing.big};
+          margin-bottom: ${stylesVariables.spacing.medium};
         }
 
-        article:last-child {
+        @media ${stylesVariables.mq.medium} {
+          article {
+            margin-bottom: ${stylesVariables.spacing.big};
+          }
+        }
+
+        article :global(a) {
+          text-decoration: none;
+        }
+
+        article:last-of-type {
           margin-bottom: 0;
         }
 
         .title {
-          font-size: ${stylesVariables.fontSizes.medium};
-          margin-bottom: ${stylesVariables.spacing.small};
+          font-size: ${stylesVariables.fontSizes.generalText};
+          line-height: ${stylesVariables.lineHeights.generalText};
+          margin-bottom: 8px;
         }
 
-        .title :global(a) {
-          text-decoration: none;
+        @media ${stylesVariables.mq.medium} {
+          .title {
+            font-size: ${stylesVariables.fontSizes.medium};
+            line-height: ${stylesVariables.lineHeights.medium};
+            margin-bottom: ${stylesVariables.spacing.small};
+          }
         }
 
         .date {
-          font-size: ${stylesVariables.fontSizes.generalText};
+          font-size: ${stylesVariables.fontSizes.small};
           color: ${stylesVariables.colors.lightGrey};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .date {
+            font-size: ${stylesVariables.fontSizes.generalText};
+          }
         }
       `}
     </style>

@@ -67,6 +67,13 @@ const Header = () => (
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
+          flex-direction: column;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .container {
+            flex-direction: row;
+          }
         }
 
         .title {
@@ -95,26 +102,24 @@ const Header = () => (
 
         .navigation-list,
         .social-media-list {
-          display: flex;
-          flex-basis: 100%;
+          display: inline-flex;
           justify-content: center;
         }
 
         @media ${stylesVariables.mq.medium} {
           .navigation-list,
           .social-media-list {
-            flex-basis: auto;
             justify-content: unset;
           }
         }
 
         .navigation-list {
-          margin-left: auto;
           margin-bottom: ${stylesVariables.spacing.medium};
         }
 
         @media ${stylesVariables.mq.medium} {
           .navigation-list {
+            margin-left: auto;
             margin-bottom: 0;
           }
         }

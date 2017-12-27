@@ -5,12 +5,12 @@ const Footer = () => (
   <footer>
     <div className="container">
       <div className="footer-row">
-        <span>
+        <span className="footer-elem">
           Site made using <a href="https://www.gatsbyjs.org/">Gatsby</a>,{" "}
           <a href="https://rsms.me/inter/">Inter UI</a> and{" "}
           <a href="https://simpleicons.org/">Simple Icons</a>.
         </span>
-        <span>Ariel Gerstein - 2018</span>
+        <span className="footer-elem">Ariel Gerstein - 2018</span>
       </div>
     </div>
 
@@ -25,6 +25,20 @@ const Footer = () => (
         .footer-row {
           display: flex;
           justify-content: space-between;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .footer-row {
+            flex-direction: row;
+            text-align: auto;
+          }
+        }
+
+        .footer-elem {
+          text-align: center;
+          margin-bottom: ${stylesVariables.spacing.small};
         }
       `}
     </style>
