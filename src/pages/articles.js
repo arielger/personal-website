@@ -11,9 +11,10 @@ const ArticlesPage = ({ data }) => {
           {posts.map(({ node }) => (
             <ArticlePreview
               key={node.frontmatter.title}
+              path={node.frontmatter.path}
               title={node.frontmatter.title}
-              excerpt={node.excerpt}
               date={node.frontmatter.date}
+              excerpt={node.excerpt}
             />
           ))}
         </div>
@@ -23,7 +24,7 @@ const ArticlesPage = ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query ArticlesPageQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
