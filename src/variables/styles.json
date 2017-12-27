@@ -17,6 +17,8 @@
     "title": "32px"
   },
   "lineHeights": {
+    "small": "24px",
+    "generalText": "27px",
     "medium": "36px"
   },
   "fontWeights": {

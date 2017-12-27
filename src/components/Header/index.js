@@ -25,8 +25,8 @@ const Header = () => (
       <h1 className="title">
         <Link to="/">Ariel Gerstein</Link>
       </h1>
-      <nav>
-        <ul className="navigation-list list-unstyled">
+      <nav className="navigation-list">
+        <ul className="list-unstyled">
           {links.map(link => (
             <li key={link.text}>
               <Link to={link.href} activeClassName="active" exact>
@@ -35,35 +35,54 @@ const Header = () => (
             </li>
           ))}
         </ul>
-        <ul className="social-media-list list-unstyled">
-          {socialMediaLinks.map(socialMediaLink => (
-            <li key={socialMediaLink.href}>
-              <a target="_blank" href={socialMediaLink.href}>
-                {React.createElement(socialMediaLink.icon, {
-                  width: 22,
-                })}
-              </a>
-            </li>
-          ))}
-        </ul>
       </nav>
+      <ul className="social-media-list list-unstyled">
+        {socialMediaLinks.map(socialMediaLink => (
+          <li key={socialMediaLink.href}>
+            <a target="_blank" href={socialMediaLink.href}>
+              {React.createElement(socialMediaLink.icon, {
+                width: 22,
+              })}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
 
     <style jsx>
       {`
         header {
-          margin-top: 96px;
-          margin-bottom: ${stylesVariables.spacing.big};
+          margin: ${stylesVariables.spacing.medium} 0;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .header {
+            margin-top: 96px;
+            margin-bottom: ${stylesVariables.spacing.big};
+          }
         }
 
         .container {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          flex-wrap: wrap;
         }
 
         .title {
           display: inline-block;
+          margin-bottom: ${stylesVariables.spacing.small};
+          flex-basis: 100%;
+          text-align: center;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .title {
+            font-size: ${stylesVariables.fontSizes.title};
+            flex-basis: auto;
+            text-align: left;
+            margin-bottom: 0;
+          }
         }
 
         .title :global(a) {
@@ -77,6 +96,31 @@ const Header = () => (
         .navigation-list,
         .social-media-list {
           display: flex;
+          flex-basis: 100%;
+          justify-content: center;
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .navigation-list,
+          .social-media-list {
+            flex-basis: auto;
+            justify-content: unset;
+          }
+        }
+
+        .navigation-list {
+          margin-left: auto;
+          margin-bottom: ${stylesVariables.spacing.medium};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .navigation-list {
+            margin-bottom: 0;
+          }
+        }
+
+        .navigation-list ul {
+          display: inline-flex;
         }
 
         .navigation-list li {
@@ -93,6 +137,10 @@ const Header = () => (
           font-weight: ${stylesVariables.fontWeights.medium};
         }
 
+        .social-media-list {
+          color: ${stylesVariables.colors.lightGrey};
+        }
+
         .social-media-list li {
           margin: 0 4px;
         }
@@ -100,6 +148,11 @@ const Header = () => (
         .social-media-list li :global(a) {
           padding: 4px;
           text-decoration: none;
+          display: block;
+        }
+
+        .social-media-list li :global(a svg) {
+          display: block; // Remove whitespace below icons
         }
       `}
     </style>
