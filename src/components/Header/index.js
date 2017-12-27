@@ -56,7 +56,7 @@ const Header = () => (
         }
 
         @media ${stylesVariables.mq.medium} {
-          .header {
+          header {
             margin-top: 96px;
             margin-bottom: ${stylesVariables.spacing.big};
           }
