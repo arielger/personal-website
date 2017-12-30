@@ -5,17 +5,17 @@ import stylesVariables from "../../variables/styles.json";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const ArticlePreview = ({ path, title, excerpt, date }) => (
-  <article>
+  <article className={excerpt ? "with-excerpt" : ""}>
     <Link to={path}>
       <h2 className="title">{title}</h2>
       <time className="date">{date}</time>
-      {excerpt && <p>{excerpt}</p>}
+      {excerpt && <p className="excerpt">{excerpt}</p>}
     </Link>
 
     <style jsx>
       {`
         article {
-          margin-bottom: ${stylesVariables.spacing.medium};
+          margin-bottom: ${stylesVariables.spacing.big};
         }
 
         @media ${stylesVariables.mq.medium} {
@@ -42,18 +42,40 @@ const ArticlePreview = ({ path, title, excerpt, date }) => (
           .title {
             font-size: ${stylesVariables.fontSizes.medium};
             line-height: ${stylesVariables.lineHeights.medium};
-            margin-bottom: ${stylesVariables.spacing.small};
+            margin-bottom: 8px;
           }
         }
 
         .date {
+          display: inline-block;
           font-size: ${stylesVariables.fontSizes.small};
           color: ${stylesVariables.colors.lightGrey};
+        }
+
+        .with-excerpt .date {
+          margin-bottom: ${stylesVariables.spacing.small};
         }
 
         @media ${stylesVariables.mq.medium} {
           .date {
             font-size: ${stylesVariables.fontSizes.generalText};
+          }
+
+          .with-excerpt .date {
+            margin-bottom: 24px;
+          }
+        }
+
+        .excerpt {
+          margin: 0;
+          font-size: ${stylesVariables.fontSizes.small};
+          line-height: ${stylesVariables.lineHeights.small};
+        }
+
+        @media ${stylesVariables.mq.medium} {
+          .excerpt {
+            font-size: ${stylesVariables.fontSizes.generalText};
+            line-height: ${stylesVariables.lineHeights.generalText};
           }
         }
       `}
@@ -62,14 +84,14 @@ const ArticlePreview = ({ path, title, excerpt, date }) => (
 );
 
 ArticlePreview.defaultProps = {
-  excerpt: "",
+  excerpt: ""
 };
 
 ArticlePreview.propTypes = {
   path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
 };
 
 export default ArticlePreview;
