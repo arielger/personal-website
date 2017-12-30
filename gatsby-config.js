@@ -7,9 +7,19 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/articles`,
-        name: "articles",
-      },
+        name: "articles"
+      }
     },
     "gatsby-transformer-remark",
-  ],
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`
+          }
+        ]
+      }
+    }
+  ]
 };

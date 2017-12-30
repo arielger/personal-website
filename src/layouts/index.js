@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import twemoji from "twemoji";
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "prismjs/themes/prism.css";
 import InterUIRegularWoffFont from "../fonts/Inter-UI-Regular.woff";
 import InterUIRegularWoff2Font from "../fonts/Inter-UI-Regular.woff2";
 import InterUIMediumWoffFont from "../fonts/Inter-UI-Medium.woff";
@@ -16,7 +17,7 @@ class TemplateWrapper extends React.Component {
   componentDidMount() {
     twemoji.parse(this.wrapper, {
       folder: "svg",
-      ext: ".svg",
+      ext: ".svg"
     });
   }
   render() {
@@ -34,13 +35,13 @@ class TemplateWrapper extends React.Component {
             {
               name: "description",
               content:
-                "I am a front-end developer passionate about the web and new technologies. I enjoy learning about Javascript, ES6, React, Redux, Functional Programming and design.",
+                "I am a front-end developer passionate about the web and new technologies. I enjoy learning about Javascript, ES6, React, Redux, Functional Programming and design."
             },
             {
               name: "keywords",
               content:
-                "portfolio, development, programming, front-end development",
-            },
+                "portfolio, development, programming, front-end development"
+            }
           ]}
         />
         <Header />
@@ -100,7 +101,7 @@ class TemplateWrapper extends React.Component {
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 export default TemplateWrapper;
