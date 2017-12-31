@@ -12,6 +12,7 @@
     "gatsby-plugin-google-analytics": "^1.0.14",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-react-next": "^1.0.6",
+    "gatsby-plugin-sitemap": "^1.2.9",
     "gatsby-plugin-styled-jsx": "^1.0.13",
     "gatsby-remark-prismjs": "^1.2.11",
     "gatsby-source-filesystem": "^1.5.11",

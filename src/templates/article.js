@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import DisqusComments from "react-disqus-comments";
 import Separator from "../components/Separator";
 import stylesVariables from "../variables/styles.json";
+import { SITE_URL } from "../variables/config.json";
 
 const ArticleTemplate = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -23,9 +24,7 @@ const ArticleTemplate = ({ data }) => {
               shortname="arielgerstein"
               identifier={post.frontmatter.path}
               title={post.frontmatter.title}
-              url={`http://www.arielgerstein.com/articles${
-                post.frontmatter.path
-              }`}
+              url={`${SITE_URL}${post.frontmatter.path}`}
             />
           </div>
         </div>

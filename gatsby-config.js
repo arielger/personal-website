@@ -1,4 +1,9 @@
+const config = require("./src/variables/config.json");
+
 module.exports = {
+  siteMetadata: {
+    siteUrl: config.SITE_URL
+  },
   plugins: [
     "gatsby-plugin-react-next",
     "gatsby-plugin-styled-jsx",
@@ -28,6 +33,7 @@ module.exports = {
         trackingId: "UA-52626121-4",
         anonymize: true
       }
-    }
+    },
+    "gatsby-plugin-sitemap"
   ]
 };
