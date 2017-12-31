@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import DisqusComments from "react-disqus-comments";
 import Separator from "../components/Separator";
 import stylesVariables from "../variables/styles.json";
 
@@ -17,6 +18,14 @@ const ArticleTemplate = ({ data }) => {
             <div
               className="body"
               dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+            <DisqusComments
+              shortname="arielgerstein"
+              identifier={post.frontmatter.path}
+              title={post.frontmatter.title}
+              url={`http://www.arielgerstein.com/articles${
+                post.frontmatter.path
+              }`}
             />
           </div>
         </div>
@@ -95,7 +104,13 @@ const ArticleTemplate = ({ data }) => {
           }
 
           @media ${stylesVariables.mq.medium} {
-            font-size: 1em;
+            .body :global(pre) {
+              font-size: 1em;
+            }
+          }
+
+          .article :global(#disqus_thread) {
+            margin-top: ${stylesVariables.spacing.big};
           }
         `}
       </style>
