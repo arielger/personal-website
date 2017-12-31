@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container">
       <div className="footer-row">
         <span className="footer-elem">
-          Site made using <a href="https://www.gatsbyjs.org/">Gatsby</a>,{" "}
+          Made using <a href="https://www.gatsbyjs.org/">Gatsby</a>,{" "}
           <a href="https://rsms.me/inter/">Inter UI</a> and{" "}
           <a href="https://simpleicons.org/">Simple Icons</a>.
         </span>

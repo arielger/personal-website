@@ -46,9 +46,17 @@ const ArticleTemplate = ({ data }) => {
           }
 
           .title {
-            font-size: 43px;
-            line-height: 1.4em;
-            margin-bottom: ${stylesVariables.spacing.medium};
+            font-size: ${stylesVariables.fontSizes.title};
+            line-height: ${stylesVariables.lineHeights.title};
+            margin-bottom: 24px;
+          }
+
+          @media ${stylesVariables.mq.medium} {
+            .title {
+              font-size: 43px;
+              line-height: 1.4em;
+              margin-bottom: ${stylesVariables.spacing.medium};
+            }
           }
 
           .body {
@@ -83,6 +91,11 @@ const ArticleTemplate = ({ data }) => {
 
           .body :global(pre) {
             margin: 1.5em 0;
+            font-size: ${stylesVariables.fontSizes.small};
+          }
+
+          @media ${stylesVariables.mq.medium} {
+            font-size: 1em;
           }
         `}
       </style>

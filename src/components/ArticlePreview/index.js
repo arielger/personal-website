@@ -7,15 +7,21 @@ import stylesVariables from "../../variables/styles.json";
 const ArticlePreview = ({ path, title, excerpt, date }) => (
   <article className={excerpt ? "with-excerpt" : ""}>
     <Link to={path}>
-      <h2 className="title">{title}</h2>
-      <time className="date">{date}</time>
-      {excerpt && <p className="excerpt">{excerpt}</p>}
+      <div>
+        <h2 className="title">{title}</h2>
+        <time className="date">{date}</time>
+        {excerpt && <p className="excerpt">{excerpt}</p>}
+      </div>
     </Link>
 
     <style jsx>
       {`
         article {
           margin-bottom: ${stylesVariables.spacing.big};
+        }
+
+        article:hover .title {
+          text-decoration: underline;
         }
 
         @media ${stylesVariables.mq.medium} {
