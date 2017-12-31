@@ -15,11 +15,18 @@ module.exports = {
         name: "articles"
       }
     },
-    "gatsby-transformer-remark",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 730,
+              linkImagesToOriginal: false,
+              sizeByPixelDensity: false
+            }
+          },
           {
             resolve: `gatsby-remark-prismjs`
           }

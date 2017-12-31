@@ -72,7 +72,7 @@ const ArticleTemplate = ({ data }) => {
             line-height: ${stylesVariables.lineHeights.generalText};
           }
 
-          .body :global(img) {
+          .body :global(.gatsby-resp-image-wrapper) {
             max-width: 100%;
             margin: 2em 0;
           }
