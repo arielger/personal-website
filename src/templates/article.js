@@ -10,7 +10,10 @@ const ArticleTemplate = ({ data }) => {
 
   return (
     <main className="article">
-      <Helmet title={`${post.frontmatter.title} - Ariel Gerstein`} />
+      <Helmet>
+        <title>{`${post.frontmatter.title} - Ariel Gerstein`}</title>
+        <meta name="description" content={post.excerpt} />
+      </Helmet>
       <div className="container">
         <div className="article-row row">
           <div className="col-12 col-lg-8 offset-lg-2">
@@ -120,6 +123,7 @@ const ArticleTemplate = ({ data }) => {
 export const pageQuery = graphql`
   query ArticleByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
+      excerpt(pruneLength: 250)
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

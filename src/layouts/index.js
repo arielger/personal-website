@@ -29,21 +29,17 @@ class TemplateWrapper extends React.Component {
           this.wrapper = e;
         }}
       >
-        <Helmet
-          title="Ariel Gerstein - Front-end developer"
-          meta={[
-            {
-              name: "description",
-              content:
-                "I am a front-end developer passionate about the web and new technologies. I enjoy learning about Javascript, ES6, React, Redux, Functional Programming and design."
-            },
-            {
-              name: "keywords",
-              content:
-                "portfolio, development, programming, front-end development"
-            }
-          ]}
-        />
+        <Helmet>
+          <title>Ariel Gerstein - Front-end developer</title>
+          <meta
+            name="description"
+            content="I am a front-end developer passionate about the web and new technologies. I enjoy learning about Javascript, ES6, React, Redux, Functional Programming and design."
+          />
+          <meta
+            name="keywords"
+            content="arielgerstein, portfolio, developer, javascript"
+          />
+        </Helmet>
         <Header />
         <div>{children()}</div>
         <Footer />
