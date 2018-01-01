@@ -41,6 +41,12 @@ module.exports = {
         anonymize: true
       }
     },
-    "gatsby-plugin-sitemap"
+    "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: config.SITE_URL
+      }
+    }
   ]
 };
