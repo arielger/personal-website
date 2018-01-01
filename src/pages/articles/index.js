@@ -1,7 +1,7 @@
 import React from "react";
-import ArticlePreview from "../components/ArticlePreview";
-import Separator from "../components/Separator";
-import stylesVariables from "../variables/styles.json";
+import ArticlePreview from "../../components/ArticlePreview";
+import Separator from "../../components/Separator";
+import stylesVariables from "../../variables/styles.json";
 
 const ArticlesPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
