@@ -10,7 +10,9 @@ const Footer = () => (
           <a href="https://rsms.me/inter/">Inter UI</a> and{" "}
           <a href="https://simpleicons.org/">Simple Icons</a>.
         </span>
-        <span className="footer-elem">Ariel Gerstein - 2018</span>
+        <span className="footer-elem">
+          Ariel Gerstein - {new Date().getFullYear()}
+        </span>
       </div>
     </div>
 
