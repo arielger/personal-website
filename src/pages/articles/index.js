@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import ArticlePreview from "../../components/ArticlePreview";
 import Separator from "../../components/Separator";
 import stylesVariables from "../../variables/styles.json";
@@ -8,6 +9,9 @@ const ArticlesPage = ({ data }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Articles - Ariel Gerstein</title>
+      </Helmet>
       <div className="container">
         <div className="row articles-row">
           <div className="col-12 col-lg-8">

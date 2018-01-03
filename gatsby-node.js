@@ -1,4 +1,7 @@
 const path = require("path");
+const _ = require("lodash/fp");
+
+const getArticleFrontmatter = _.get("frontmatter");
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -29,10 +32,23 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const articles = result.data.allMarkdownRemark.edges;
+
+    articles.forEach((edge, index) => {
+      const prev = getArticleFrontmatter(
+        index === 0 ? false : articles[index - 1].node
+      );
+      const next = getArticleFrontmatter(
+        index === articles.length - 1 ? false : articles[index + 1].node
+      );
+
       createPage({
-        path: node.frontmatter.path,
+        path: edge.node.frontmatter.path,
         component: articleTemplate,
+        context: {
+          next,
+          prev
+        }
       });
     });
   });
