@@ -8,7 +8,6 @@
     "bootstrap": "4.0.0-beta.2",
     "gatsby": "^1.9.139",
     "gatsby-link": "^1.6.32",
-    "gatsby-plugin-canonical-urls": "^1.0.10",
     "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-google-analytics": "^1.0.14",

@@ -21,7 +21,7 @@ class TemplateWrapper extends React.Component {
     });
   }
   render() {
-    const { children } = this.props;
+    const { children, location } = this.props;
 
     return (
       <div
@@ -38,6 +38,10 @@ class TemplateWrapper extends React.Component {
           <meta
             name="keywords"
             content="arielgerstein, portfolio, developer, javascript"
+          />
+          <link
+            rel="canonical"
+            href={`https://www.arielgerstein.com${location.pathname}`}
           />
         </Helmet>
         <Header />

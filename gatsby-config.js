@@ -43,12 +43,6 @@ module.exports = {
     },
     "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: config.SITE_URL
-      }
-    },
-    {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: "./src/favicon.png",
