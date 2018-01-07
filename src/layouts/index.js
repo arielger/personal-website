@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import twemoji from "twemoji";
+import Twemoji from "react-twemoji";
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "prismjs/themes/prism.css";
@@ -14,12 +14,6 @@ import Footer from "../components/Footer";
 import styleVariables from "../variables/styles.json";
 
 class TemplateWrapper extends React.Component {
-  componentDidMount() {
-    twemoji.parse(this.wrapper, {
-      folder: "svg",
-      ext: ".svg"
-    });
-  }
   render() {
     const { children, location } = this.props;
 
@@ -45,7 +39,14 @@ class TemplateWrapper extends React.Component {
           />
         </Helmet>
         <Header />
-        <div>{children()}</div>
+        <Twemoji
+          options={{
+            folder: "svg",
+            ext: ".svg"
+          }}
+        >
+          <div>{children()}</div>
+        </Twemoji>
         <Footer />
         <style jsx global>
           {`
