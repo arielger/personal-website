@@ -57,6 +57,7 @@ const Contact = () => (
           font-weight: ${stylesVariables.fontWeights.medium};
           text-decoration: none;
           position: relative;
+          padding-bottom: 10px;
         }
 
         @media ${stylesVariables.mq.medium} {
@@ -65,21 +66,14 @@ const Contact = () => (
           }
         }
 
-        .email:hover:after {
-          transform: scaleX(0);
-        }
-
         .email:after {
           content: "";
           position: absolute;
           left: 0;
           right: 0;
-          bottom: -10px;
+          bottom: 0;
           height: 2px;
           background-color: currentColor;
-          transform-origin: 0 0;
-          transform: scaleX(1);
-          transition: transform 0.2s;
         }
 
         @media ${stylesVariables.mq.medium} {
