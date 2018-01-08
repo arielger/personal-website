@@ -53,7 +53,7 @@ const ArticleTemplate = ({ data, pathContext: { prev, next } }) => {
 
           .date {
             display: inline-block;
-            color: ${stylesVariables.colors.lightGrey};
+            color: ${stylesVariables.colors.gray[5]};
             margin-bottom: ${stylesVariables.spacing.small};
           }
 
@@ -85,10 +85,6 @@ const ArticleTemplate = ({ data, pathContext: { prev, next } }) => {
             font-weight: ${stylesVariables.fontWeights.medium};
             text-decoration: none;
             border-bottom: 1px solid currentColor;
-          }
-
-          .body :global(a:hover) {
-            background-color: rgba(0, 0, 0, 0.1);
           }
 
           .body :global(h2) {

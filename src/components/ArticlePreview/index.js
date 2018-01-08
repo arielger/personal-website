@@ -41,6 +41,7 @@ const ArticlePreview = ({ path, title, excerpt, date }) => (
         .title {
           font-size: ${stylesVariables.fontSizes.generalText};
           line-height: ${stylesVariables.lineHeights.generalText};
+          color: ${stylesVariables.colors.gray[8]}
           margin-bottom: 8px;
         }
 
@@ -55,7 +56,7 @@ const ArticlePreview = ({ path, title, excerpt, date }) => (
         .date {
           display: inline-block;
           font-size: ${stylesVariables.fontSizes.small};
-          color: ${stylesVariables.colors.lightGrey};
+          color: ${stylesVariables.colors.gray[5]};
         }
 
         .with-excerpt .date {
@@ -76,6 +77,7 @@ const ArticlePreview = ({ path, title, excerpt, date }) => (
           margin: 0;
           font-size: ${stylesVariables.fontSizes.small};
           line-height: ${stylesVariables.lineHeights.small};
+          color: ${stylesVariables.colors.gray[8]}
         }
 
         @media ${stylesVariables.mq.medium} {

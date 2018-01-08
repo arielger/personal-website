@@ -9,14 +9,14 @@ import stylesVariables from "../../variables/styles.json";
 
 const links = [
   { href: "/", text: "Home" },
-  { href: "/articles", text: "Articles" },
+  { href: "/articles", text: "Articles" }
 ];
 
 const socialMediaLinks = [
   { href: "https://github.com/arielger", icon: GithubIcon },
   { href: "https://www.linkedin.com/in/arielgerstein/", icon: LinkedinIcon },
   { href: "https://twitter.com/arielger", icon: TwitterIcon },
-  { href: "https://codepen.io/arielger", icon: CodepenIcon },
+  { href: "https://codepen.io/arielger", icon: CodepenIcon }
 ];
 
 const Header = () => (
@@ -41,7 +41,7 @@ const Header = () => (
           <li key={socialMediaLink.href}>
             <a target="_blank" href={socialMediaLink.href}>
               {React.createElement(socialMediaLink.icon, {
-                width: 22,
+                width: 22
               })}
             </a>
           </li>
@@ -94,6 +94,7 @@ const Header = () => (
 
         .title :global(a) {
           text-decoration: none;
+          color: ${stylesVariables.colors.gray[9]};
         }
 
         nav {
@@ -133,9 +134,9 @@ const Header = () => (
         }
 
         .navigation-list li :global(a) {
-          color: ${stylesVariables.colors.mediumGrey};
           padding: 8px;
           text-decoration: none;
+          color: ${stylesVariables.colors.gray[9]};
         }
 
         .navigation-list li :global(a.active) {
@@ -143,7 +144,7 @@ const Header = () => (
         }
 
         .social-media-list {
-          color: ${stylesVariables.colors.lightGrey};
+          color: ${stylesVariables.colors.gray[5]};
         }
 
         .social-media-list li {

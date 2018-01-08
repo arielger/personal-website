@@ -69,6 +69,7 @@ class TemplateWrapper extends React.Component {
         body {
           font-family: "Inter UI", Helvetica, Arial, sans-serif;
           font-weight: ${styleVariables.fontWeights.regular};
+          color: ${styleVariables.colors.gray[8]}
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -76,12 +77,13 @@ class TemplateWrapper extends React.Component {
         }
 
         a {
-          color: currentColor;
+          color: #3b5bdb;
           text-decoration: underline;
+          transition: color 0.1s ease-out;
         }
 
         a:hover {
-          color: ${styleVariables.colors.black};
+          color: #5c7cfa;
         }
 
         // Set default size for emojis generated via twemoji

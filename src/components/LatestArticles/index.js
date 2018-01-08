@@ -67,7 +67,6 @@ const LatestArticles = ({ articles }) => (
 
         .title {
           font-size: ${stylesVariables.fontSizes.title};
-          color: ${stylesVariables.colors.mediumGrey};
           margin-bottom: ${stylesVariables.spacing.big};
         }
 
@@ -80,7 +79,7 @@ const LatestArticles = ({ articles }) => (
         .all-articles-link :global(a) {
           text-decoration: none;
           font-size: ${stylesVariables.fontSizes.generalText};
-          color: ${stylesVariables.colors.lightGrey};
+          color: ${stylesVariables.colors.gray[5]};
         }
 
         .all-articles-link .arrow {
@@ -100,7 +99,7 @@ const LatestArticles = ({ articles }) => (
 );
 
 LatestArticles.propTypes = {
-  articles: PropTypes.array.isRequired,
+  articles: PropTypes.array.isRequired
 };
 
 export default LatestArticles;

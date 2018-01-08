@@ -20,7 +20,7 @@ const Footer = () => (
       {`
         footer {
           padding: ${stylesVariables.spacing.big} 0;
-          color: ${stylesVariables.colors.lightGrey};
+          color: ${stylesVariables.colors.gray[5]};
           font-size: 13px;
         }
 

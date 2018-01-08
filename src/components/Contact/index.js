@@ -42,7 +42,6 @@ const Contact = () => (
 
         .title {
           font-size: ${stylesVariables.fontSizes.title};
-          color: ${stylesVariables.colors.mediumGrey};
           margin-bottom: ${stylesVariables.spacing.medium};
         }
 
