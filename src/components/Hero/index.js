@@ -6,18 +6,15 @@ const Hero = () => (
   <section className="hero">
     <div className="container">
       <div className="hero-row row">
-        <div className="col-12 col-lg-8">
+        <div className="col-12 col-lg-7">
           <p>
-            I’m a front-end developer 👨‍💻 from Buenos Aires, Argentina 🇦🇷. I’m
-            really passionate about my work: i’m always looking to learn new
-            technologies and create great products.
+            I'm a Javascript Developer 👨‍💻 with a strong focus on React ⚛️. I'm
+            from Buenos Aires, Argentina 🇦🇷 and currently working at{" "}
+            <a href="https://auth0.com/">Auth0</a>.
           </p>
-
           <p>
-            I worked on a software factory for startups called{" "}
-            <a href="redmintlabs.com">Redmint</a> and right now i’m working at{" "}
-            <a href="https://auth0.com/">Auth0</a>, creating a better
-            authentication experience.
+            In my free time I enjoy writing in my blog and learning about new
+            web technologies like React, Redux or functional programming.
           </p>
         </div>
       </div>
