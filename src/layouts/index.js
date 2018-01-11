@@ -35,7 +35,7 @@ class TemplateWrapper extends React.Component {
           />
           <link
             rel="canonical"
-            href={`http://www.arielgerstein.com${location.pathname}`}
+            href={`https://www.arielgerstein.com${location.pathname}`}
           />
         </Helmet>
         <Header />
