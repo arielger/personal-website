@@ -27,11 +27,11 @@ class TemplateWrapper extends React.Component {
           <title>Ariel Gerstein - Front-end developer</title>
           <meta
             name="description"
-            content="I'm a Javascript Developer 👨‍💻 with a strong focus on React ⚛️. I'm from Buenos Aires, Argentina 🇦🇷 and currently working at Auth0."
+            content="I'm a Javascript Developer 👨‍💻 interested in Javascript, React, Redux and GraphQL ⚛️."
           />
           <meta
             name="keywords"
-            content="arielgerstein, portfolio, developer, javascript"
+            content="arielgerstein, portfolio, developer, javascript, react"
           />
           <link
             rel="canonical"

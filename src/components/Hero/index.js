@@ -10,11 +10,11 @@ const Hero = () => (
           <p>
             I'm a Javascript Developer 👨‍💻 with a strong focus on React ⚛️. I'm
             from Buenos Aires, Argentina 🇦🇷 and currently working at{" "}
-            <a href="https://auth0.com/">Auth0</a>.
+            <a href="https://www.worcket.com/employers/index.html">Worcket</a>.
           </p>
           <p>
             In my free time I enjoy writing in my blog and learning about new
-            web technologies like React, Redux or functional programming.
+            web technologies like React, Redux and GraphQL.
           </p>
         </div>
       </div>
