@@ -2,18 +2,19 @@ const config = require("./src/variables/config.json");
 
 module.exports = {
   siteMetadata: {
-    siteUrl: config.SITE_URL
+    siteUrl: config.SITE_URL,
   },
   plugins: [
-    "gatsby-plugin-react-next",
     "gatsby-plugin-styled-jsx",
-    "@jacobmischka/gatsby-plugin-react-svg",
+    {
+      resolve: "gatsby-plugin-react-svg",
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/articles`,
-        name: "articles"
-      }
+        name: "articles",
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -24,41 +25,31 @@ module.exports = {
             options: {
               maxWidth: 730,
               linkImagesToOriginal: false,
-              sizeByPixelDensity: false
-            }
+              sizeByPixelDensity: false,
+            },
           },
           {
-            resolve: `gatsby-remark-prismjs`
-          }
-        ]
-      }
+            resolve: `gatsby-remark-prismjs`,
+          },
+        ],
+      },
     },
     "gatsby-plugin-catch-links",
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: config.GOOGLE_ANALYTICS_TRACKING_ID,
-        anonymize: true
-      }
+        anonymize: true,
+      },
     },
     "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        logo: "./src/favicon.png",
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false
-        }
-      }
-    }
-  ]
+        name: "Ariel Gerstein",
+        start_url: "/",
+        icon: "/src/favicon.png",
+      },
+    },
+  ],
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import Separator from "../Separator";
 import stylesVariables from "../../variables/styles.json";
 import ArticlePreview from "../ArticlePreview";
@@ -99,7 +99,7 @@ const LatestArticles = ({ articles }) => (
 );
 
 LatestArticles.propTypes = {
-  articles: PropTypes.array.isRequired
+  articles: PropTypes.array.isRequired,
 };
 
 export default LatestArticles;

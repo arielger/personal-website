@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import stylesVariables from "../../variables/styles.json";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
@@ -92,14 +92,14 @@ const ArticlePreview = ({ path, title, excerpt, date }) => (
 );
 
 ArticlePreview.defaultProps = {
-  excerpt: ""
+  excerpt: "",
 };
 
 ArticlePreview.propTypes = {
   path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string,
-  date: PropTypes.string.isRequired
+  date: PropTypes.string.isRequired,
 };
 
 export default ArticlePreview;

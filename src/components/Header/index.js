@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import GithubIcon from "./images/github.svg";
 import LinkedinIcon from "./images/linkedin.svg";
 import TwitterIcon from "./images/twitter.svg";
@@ -9,14 +9,14 @@ import stylesVariables from "../../variables/styles.json";
 
 const links = [
   { href: "/", text: "Home" },
-  { href: "/articles", text: "Articles" }
+  { href: "/articles", text: "Articles" },
 ];
 
 const socialMediaLinks = [
   { href: "https://github.com/arielger", icon: GithubIcon },
   { href: "https://www.linkedin.com/in/arielgerstein/", icon: LinkedinIcon },
   { href: "https://twitter.com/arielger", icon: TwitterIcon },
-  { href: "https://codepen.io/arielger", icon: CodepenIcon }
+  { href: "https://codepen.io/arielger", icon: CodepenIcon },
 ];
 
 const Header = () => (
@@ -27,7 +27,7 @@ const Header = () => (
       </h1>
       <nav className="navigation-list">
         <ul className="list-unstyled">
-          {links.map(link => (
+          {links.map((link) => (
             <li key={link.text}>
               <Link to={link.href} activeClassName="active" exact>
                 {link.text}
@@ -37,11 +37,11 @@ const Header = () => (
         </ul>
       </nav>
       <ul className="social-media-list list-unstyled">
-        {socialMediaLinks.map(socialMediaLink => (
+        {socialMediaLinks.map((socialMediaLink) => (
           <li key={socialMediaLink.href}>
             <a target="_blank" href={socialMediaLink.href}>
               {React.createElement(socialMediaLink.icon, {
-                width: 22
+                width: 22,
               })}
             </a>
           </li>
