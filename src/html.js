@@ -9,9 +9,8 @@ if (process.env.NODE_ENV === `production`) {
   }
 }
 
-module.exports = class HTML extends React.Component {
-  render() {
-    let css;
+const HTML = ({ htmlAttributes, body, headComponents, bodyAttributes,preBodyComponents, postBodyComponents }) => {
+  let css;
     if (process.env.NODE_ENV === `production`) {
       css = (
         <style
@@ -21,7 +20,7 @@ module.exports = class HTML extends React.Component {
       );
     }
     return (
-      <html {...this.props.htmlAttributes}>
+      <html {...htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -30,18 +29,19 @@ module.exports = class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {css}
-          {this.props.headComponents}
+          {headComponents}
         </head>
-        <body {...this.props.bodyAttributes}>
-          {this.props.preBodyComponents}
+        <body {...bodyAttributes}>
+          {preBodyComponents}
           <div
             key={`body`}
             id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
+            dangerouslySetInnerHTML={{ __html: body }}
           />
-          {this.props.postBodyComponents}
+          {postBodyComponents}
         </body>
       </html>
     );
-  }
 };
+
+export default HTML;
