@@ -5,11 +5,11 @@ import ArticlePreview from "../../components/ArticlePreview";
 import Separator from "../../components/Separator";
 import stylesVariables from "../../variables/styles.json";
 
-const ArticlesPage = ({ data }) => {
+const ArticlesPage = ({ data, location }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <PageLayout>
+    <PageLayout location={location}>
       <Helmet>
         <title>Articles - Ariel Gerstein</title>
       </Helmet>

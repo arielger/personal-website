@@ -46,7 +46,7 @@ class TemplateWrapper extends React.Component {
             ext: ".svg"
           }}
         >
-          <div>{children()}</div>
+          <div>{children}</div>
         </Twemoji>
         <Footer />
         <style jsx global>
@@ -105,7 +105,7 @@ class TemplateWrapper extends React.Component {
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.node.isRequired
 };
 
 export default TemplateWrapper;

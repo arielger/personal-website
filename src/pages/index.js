@@ -5,11 +5,11 @@ import LatestArticles from "../components/LatestArticles";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <PageLayout>
+    <PageLayout location={location}>
       <Hero />
       <LatestArticles articles={posts} />
       <Contact />
