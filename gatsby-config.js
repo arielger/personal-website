@@ -1,6 +1,7 @@
 const config = require("./src/variables/config.json");
 
 module.exports = {
+  // siteMetadata added for gatsby-plugin-sitemap
   siteMetadata: {
     siteUrl: config.SITE_URL,
   },
@@ -16,6 +17,7 @@ module.exports = {
         name: "articles",
       },
     },
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -25,7 +27,6 @@ module.exports = {
             options: {
               maxWidth: 730,
               linkImagesToOriginal: false,
-              sizeByPixelDensity: false,
             },
           },
           {
@@ -48,7 +49,7 @@ module.exports = {
       options: {
         name: "Ariel Gerstein",
         start_url: "/",
-        icon: "/src/favicon.png",
+        icon: "src/images/favicon.png",
       },
     },
   ],

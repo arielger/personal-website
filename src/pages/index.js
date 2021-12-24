@@ -1,4 +1,5 @@
 import React from "react";
+import PageLayout from "../components/PageLayout"
 import Hero from "../components/Hero";
 import LatestArticles from "../components/LatestArticles";
 import Contact from "../components/Contact";
@@ -8,11 +9,11 @@ const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <div>
+    <PageLayout>
       <Hero />
       <LatestArticles articles={posts} />
       <Contact />
-    </div>
+    </PageLayout>
   );
 };
 

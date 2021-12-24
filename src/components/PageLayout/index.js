@@ -5,13 +5,14 @@ import Twemoji from "react-twemoji";
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "prismjs/themes/prism.css";
+// @TODO: Check if there is a better way to import this
 import InterUIRegularWoffFont from "../fonts/Inter-UI-Regular.woff";
 import InterUIRegularWoff2Font from "../fonts/Inter-UI-Regular.woff2";
 import InterUIMediumWoffFont from "../fonts/Inter-UI-Medium.woff";
 import InterUIMediumWoff2Font from "../fonts/Inter-UI-Medium.woff2";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import styleVariables from "../variables/styles.json";
+import Header from "../Header";
+import Footer from "../Footer";
+import styleVariables from "../../variables/styles.json";
 
 class TemplateWrapper extends React.Component {
   render() {
