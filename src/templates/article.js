@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import { graphql } from "gatsby"
 // import DisqusComments from "react-disqus-comments";
 import Separator from "../components/Separator";
 import stylesVariables from "../variables/styles.json";
 // import { SITE_URL } from "../variables/config.json";
 
-const ArticleTemplate = ({ data, pathContext: { prev, next } }) => {
+const ArticleTemplate = ({ data, pageContext: { prev, next } }) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -120,7 +121,7 @@ const ArticleTemplate = ({ data, pathContext: { prev, next } }) => {
 
 ArticleTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export const pageQuery = graphql`

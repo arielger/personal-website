@@ -29,7 +29,7 @@ const Header = () => (
         <ul className="list-unstyled">
           {links.map((link) => (
             <li key={link.text}>
-              <Link to={link.href} activeClassName="active" exact>
+              <Link to={link.href} activeClassName="active">
                 {link.text}
               </Link>
             </li>

@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { graphql } from "gatsby"
 import PageLayout from "../../components/PageLayout";
 import ArticlePreview from "../../components/ArticlePreview";
 import Separator from "../../components/Separator";
