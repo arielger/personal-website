@@ -7,9 +7,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-styled-jsx",
-    {
-      resolve: "gatsby-plugin-react-svg",
-    },
+    "gatsby-plugin-react-svg",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

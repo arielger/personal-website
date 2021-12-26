@@ -10,7 +10,7 @@ const Hero = () => (
           <p>
             I'm a Javascript Developer 👨‍💻 with a strong focus on React ⚛️. I'm
             from Buenos Aires, Argentina 🇦🇷 and currently working at{" "}
-            <a href="https://www.worcket.com/employers/index.html">Worcket</a>.
+            <a href="https://www.lemon.me/">Lemon cash</a>.
           </p>
           <p>
             In my free time I enjoy writing in my blog and learning about new
