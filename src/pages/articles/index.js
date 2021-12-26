@@ -1,14 +1,16 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { graphql } from "gatsby"
+import PageLayout from "../../components/PageLayout";
 import ArticlePreview from "../../components/ArticlePreview";
 import Separator from "../../components/Separator";
 import stylesVariables from "../../variables/styles.json";
 
-const ArticlesPage = ({ data }) => {
+const ArticlesPage = ({ data, location }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <div>
+    <PageLayout location={location}>
       <Helmet>
         <title>Articles - Ariel Gerstein</title>
       </Helmet>
@@ -46,7 +48,7 @@ const ArticlesPage = ({ data }) => {
           }
         `}
       </style>
-    </div>
+    </PageLayout>
   );
 };
 

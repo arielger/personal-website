@@ -1,18 +1,20 @@
 import React from "react";
+import { graphql } from "gatsby"
+
+import PageLayout from "../components/PageLayout"
 import Hero from "../components/Hero";
 import LatestArticles from "../components/LatestArticles";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <div>
+    <PageLayout location={location}>
       <Hero />
       <LatestArticles articles={posts} />
       <Contact />
-    </div>
+    </PageLayout>
   );
 };
 

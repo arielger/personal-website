@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import Twemoji from "react-twemoji";
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "prismjs/themes/prism.css";
-import InterUIRegularWoffFont from "../fonts/Inter-UI-Regular.woff";
-import InterUIRegularWoff2Font from "../fonts/Inter-UI-Regular.woff2";
-import InterUIMediumWoffFont from "../fonts/Inter-UI-Medium.woff";
-import InterUIMediumWoff2Font from "../fonts/Inter-UI-Medium.woff2";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import styleVariables from "../variables/styles.json";
+import InterUIRegularWoffFont from "../../fonts/Inter-UI-Regular.woff";
+import InterUIRegularWoff2Font from "../../fonts/Inter-UI-Regular.woff2";
+import InterUIMediumWoffFont from "../../fonts/Inter-UI-Medium.woff";
+import InterUIMediumWoff2Font from "../../fonts/Inter-UI-Medium.woff2";
+import Header from "../Header";
+import Footer from "../Footer";
+import styleVariables from "../../variables/styles.json";
 
 class TemplateWrapper extends React.Component {
   render() {
@@ -45,7 +45,7 @@ class TemplateWrapper extends React.Component {
             ext: ".svg"
           }}
         >
-          <div>{children()}</div>
+          <div>{children}</div>
         </Twemoji>
         <Footer />
         <style jsx global>
@@ -104,7 +104,7 @@ class TemplateWrapper extends React.Component {
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.node.isRequired
 };
 
 export default TemplateWrapper;
